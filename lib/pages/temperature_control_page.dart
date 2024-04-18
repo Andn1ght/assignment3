@@ -8,7 +8,8 @@ class TemperatureControlPage extends StatefulWidget {
 }
 
 class _TemperatureControlPageState extends State<TemperatureControlPage> {
-  double _currentTemperature = 22.0; // Default temperature, which can be dynamic
+  double _currentTemperature = 22.0; // Default temperature, dynamic
+
   bool isHeatingOn = false;
   bool isCoolingOn = false;
   bool isAirwaveOn = false;
@@ -18,7 +19,7 @@ class _TemperatureControlPageState extends State<TemperatureControlPage> {
     double sliderValue = (_currentTemperature - 16) / (30 - 16);
 
     return Scaffold(
-      backgroundColor: Color(0xFFEFEFEF), // Use the actual color from the design
+      backgroundColor: Colors.white, // Use the actual color from the design
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -26,11 +27,31 @@ class _TemperatureControlPageState extends State<TemperatureControlPage> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
+        title: Column(
+          children: [
+            Text(
+              'Temperature',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Living Room',
+              style: TextStyle(
+                color: Colors.black.withOpacity(0.6),
+                fontSize: 16,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.account_circle, color: Colors.black),
+            icon: Icon(Icons.more_vert, color: Colors.black),
             onPressed: () {
-              // Handle profile button press
+              // Handle three-dot menu button press
             },
           ),
         ],
@@ -39,19 +60,14 @@ class _TemperatureControlPageState extends State<TemperatureControlPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 20),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Living Room',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
                   SizedBox(height: 10),
                   Text(
                     '${_currentTemperature.toStringAsFixed(1)}°C',
-                    style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 96, fontWeight: FontWeight.w300),
                   ),
                   SizedBox(height: 5),
                   Text(
@@ -70,7 +86,6 @@ class _TemperatureControlPageState extends State<TemperatureControlPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
             LayoutBuilder(
               builder: (context, constraints) {
                 bool isWideScreen = constraints.maxWidth > 600;
@@ -81,24 +96,22 @@ class _TemperatureControlPageState extends State<TemperatureControlPage> {
                       modeName: 'Heating',
                       isActive: isHeatingOn,
                       onTap: () => setState(() => isHeatingOn = !isHeatingOn),
-                      width: isWideScreen ? 120 : null,
                     ),
                     CustomModeButton(
                       modeName: 'Cooling',
                       isActive: isCoolingOn,
                       onTap: () => setState(() => isCoolingOn = !isCoolingOn),
-                      width: isWideScreen ? 120 : null,
                     ),
                     CustomModeButton(
                       modeName: 'Airwave',
                       isActive: isAirwaveOn,
                       onTap: () => setState(() => isAirwaveOn = !isAirwaveOn),
-                      width: isWideScreen ? 120 : null,
                     ),
                   ],
                 );
               },
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

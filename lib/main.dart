@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Smart Home',
       theme: theme,
-      home: const HomePage(userName: 'Garrett Reynolds'), // Set the HomePage as the initial route
+      home: const HomePage(userName: 'Mr. Zhanibek'), // Set the HomePage as the initial route
       // You can add routes here if you want to navigate to the TemperatureControlPage or other pages.
       routes: {
         '/temperature': (context) => TemperatureControlPage(),

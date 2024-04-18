@@ -3,10 +3,11 @@ import '/util/smart_device_box.dart';
 import '/widgets/top_bar.dart';
 import '/widgets/device_grid.dart';
 import 'temperature_control_page.dart';
+import 'devices_connected_page.dart'; // Import the DevicesConnectedPage
 
 class HomePage extends StatefulWidget {
   final String userName; // Added to accept username dynamically
-  const HomePage({super.key, this.userName = "User"}); // Default to "User"
+  const HomePage({Key? key, this.userName = "User"}) : super(key: key); // Default to "User"
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -30,11 +31,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            const TopBar(),
+            TopBar(), // Use the TopBar widget here
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),

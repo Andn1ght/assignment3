@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/pages/devices_connected_page.dart'; // Import the DevicesConnectedPage
 
 class TopBar extends StatelessWidget {
   const TopBar({Key? key}) : super(key: key);
@@ -12,9 +13,12 @@ class TopBar extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              // Handle menu button press
+              // Navigate to DevicesConnectedPage on menu button press
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => DevicesConnectedPage(),
+              ));
             },
-            // Use Image.asset to load your custom icon image
+            // Use Image.asset to load your custom menu icon image
             child: Image.asset('lib/icons/menu.png', height: 30),
           ),
           GestureDetector(
