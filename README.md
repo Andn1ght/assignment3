@@ -1,16 +1,35 @@
-# assignment3
+# Smart Home Control App
 
-A new Flutter project.
+This repository contains the source code for a Smart Home Control App developed using Flutter.
+
+## Features
+
+- **Home Page**: Displays the main dashboard of an app, with interactive custom widgets.
+- **Temperature Control Page**: Displays interactive custom circular slider that allows users to control the temperature settings of their smart HVAC systems.
+- **Devices Connected Page**: Displays information about the connected smart devices.
+
+## Design Sketch ***(Figma)***
+
+![design](https://github.com/Andn1ght/assignment3/assets/117038995/8d41a4d5-9ee8-4c39-ab3d-5fee19497c8e)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this app, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   git clone https://github.com/your-username/smart-home-control-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd smart-home-control-app
+   ```
+3. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+4. Run the app:
+   ```bash
+   flutter run
+   ```
